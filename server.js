@@ -18,12 +18,12 @@ const errorHandler_Middleware = require('./middlewares/error-handler')
 
 
 app.use(express.json())
-const corsOptions = {
-    origin: 'http://localhost:3000',  // replace with your frontend URL
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//     origin: 'http://localhost:3000',  // replace with your frontend URL
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     credentials: true,
+// };
+app.use(cors());
 
 
 app.use('/api/v1/workouts',workoutRouter)
