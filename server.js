@@ -38,7 +38,7 @@ app.use(errorHandler_Middleware)
 const start = async () => {
     try {
         connectToDB(process.env.MONGO_URL)
-        app.listen(process.env.PORT , () => {
+        app.listen(process.env.PORT || 3030 , () => {
             console.log(`the server run on the PORT ${process.env.PORT}`);
         })
     } catch (error) {
