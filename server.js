@@ -36,12 +36,12 @@ app.use(helmet());
 app.use(cors());
 app.use(xss());
 
-app.use('/api/v1/workouts',workoutRouter)
-app.use('/api/v1/auth',authRouter)
+
 app.get('/',(req,res) => {
     res.send('hi server hosted')
 })
-
+app.use('/api/v1/workouts',workoutRouter)
+app.use('/api/v1/auth',authRouter)
 app.use("*",notFound)
 app.use(errorHandler_Middleware)
 
